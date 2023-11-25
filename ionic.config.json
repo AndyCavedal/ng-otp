@@ -1,0 +1,7 @@
+{
+  "name": "ng-login-verification",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
