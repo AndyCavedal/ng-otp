@@ -25,3 +25,37 @@
 #container a {
   text-decoration: none;
 }
+
+.otp-input {
+  display: flex;
+  justify-content: center;
+}
+
+.otp-field {
+  display: flex;
+  justify-content: center;
+}
+
+.otp-field ion-input {
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 2px;
+  border: 2px solid purple;
+  background: #21232d;
+  font-weight: bold;
+  color: #fff;
+  outline: none;
+  transition: all 0.1s;
+}
+
+.otp-field input:focus {
+  border: 2px solid #a527ff;
+  box-shadow: 0 0 2px 2px #a527ff6a;
+}
+
+.space {
+  margin-right: 1rem !important;
+}

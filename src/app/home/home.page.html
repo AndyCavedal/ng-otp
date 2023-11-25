@@ -1,20 +1,50 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Login
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-title style="text-align: center; padding: 20px;">Verificador OTP con ng-otp-input</ion-title>
+  <!-- 1 -->
+  <ion-list>
+    <ion-label></ion-label>
+    <ion-input style="display: none;" [(ngModel)]="claveMaestra" type="number" required
+      placeholder="Su clave"></ion-input>
+    <!-- 2 -->
+    <ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <ng-otp-input (keypress)="numericOnly($event)" type="numeric" (onInputChange)="onOtpChange($event)"
+        [config]="{length:8}"></ng-otp-input>
+    </ion-item>
+    <!-- 3 -->
+    <ion-item>
+      <ion-label>Esta es su clave: </ion-label>
+      <ion-input type="number" required> {{ claveMaestra }}</ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-title style="text-align: center; padding: 20px;">Verificador OTP hecho manual</ion-title>
+  <ion-list>
+
+    <ion-item>
+      <div class="otp-field">
+        <div>
+        <ion-input #index0 (keypress)="numericOnly($event)" (keyup)="onKeyUp($event, '', index0, index1)" type="text" maxlength="1" />
+      </div>
+      <div>
+        <ion-input #index1 (keypress)="numericOnly($event)" (keyup)="onKeyUp($event, index0, index1, index2)" type="text" maxlength="1" />
+      </div>
+
+        <ion-input #index2 (keypress)="numericOnly($event)" (keyup)="onKeyUp($event, index1, index2, index3)" type="text"  maxlength="1" />
+        <ion-input #index3 (keypress)="numericOnly($event)" (keyup)="onKeyUp($event, index2, index3, '')" class="space" type="text" maxlength="1" />
+
+      </div>
+    </ion-item>
+
+  </ion-list>
+
 </ion-content>
