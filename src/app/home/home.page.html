@@ -11,23 +11,25 @@
   <!-- 1 -->
   <ion-list>
     <ion-label></ion-label>
-    <ion-input style="display: none;" [(ngModel)]="claveMaestra" type="number" required
+    <ion-input [(ngModel)]="claveMaestra" type="text" required
       placeholder="Su clave"></ion-input>
     <!-- 2 -->
     <ion-item>
-
-      <ng-otp-input (keypress)="numericOnly($event)" type="numeric" (onInputChange)="onOtpChange($event)"
+      <ng-otp-input (keypress)="numericOnly($event)" type="text" (onInputChange)="onOtpChange($event)"
         [config]="{length:8}"></ng-otp-input>
     </ion-item>
     <!-- 3 -->
     <ion-item>
       <ion-label>Esta es su clave: </ion-label>
-      <ion-input type="number" required> {{ claveMaestra }}</ion-input>
+      <ion-input type="text" required> {{ claveMaestra }}</ion-input>
     </ion-item>
 
   </ion-list>
 
-  <ion-title style="text-align: center; padding: 20px;">Verificador OTP hecho manual</ion-title>
+
+
+
+  <!-- <ion-title style="text-align: center; padding: 20px;">Verificador OTP hecho manual</ion-title>
   <ion-list>
 
     <ion-item>
@@ -45,6 +47,6 @@
       </div>
     </ion-item>
 
-  </ion-list>
+  </ion-list> -->
 
 </ion-content>

@@ -18,8 +18,9 @@ export class HomePage {
 
 
   onOtpChange(event: any) {
-    this.claveMaestra += event.target.value;
-    console.log(this.claveMaestra);
+    this.claveMaestra = [];
+    this.claveMaestra += event;
+  console.log(this.claveMaestra);
   }
 
   // Funcion que verifica que lo que se envia sea un numero
@@ -47,17 +48,26 @@ export class HomePage {
   //   }
   // }
 
-  onKeyUp (e: any, prev: any, current: any, next: any) {
-    var length = current.value.length;
-    var maxlength = 1;
-    if (length == maxlength) {
-      if (next) {
-        console.log('Siguiente input');
-        next.focus();
-      }
-    } else if (e.key === 'Backspace') {
-      console.log('Retroceder input');
-      prev.focus();
-    }
-  }
+  // onKeyUp (e: any, prev: any, current: any, next: any) {
+  //   var length = current.value.length;
+  //   var maxlength = 1;
+  //   if (length === maxlength) {
+  //     if (next && next.nativeElement) {
+  //         const input = next.nativeElement.querySelector('input');
+  //         console.log('Works');
+
+  //         if (input) {
+  //             input.focus();
+  //             console.log('Worksdoble');
+  //         }
+  //     }
+  //   } else if (e.key === 'Backspace') {
+  //         if (prev && prev.nativeElement) {
+  //             const input = prev.nativeElement.querySelector('input');
+  //             if (input) {
+  //                 input.focus();
+  //             }
+  //         }
+  //     }
+  // }
 }
