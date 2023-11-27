@@ -1,5 +1,6 @@
 import { Component, ViewChildren, QueryList, ElementRef, ViewChild } from '@angular/core';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -13,6 +14,13 @@ export class HomePage {
   @ViewChild('index0') index0?: ElementRef<HTMLInputElement>;
   @ViewChild('index1') index1!: ElementRef<HTMLInputElement>;
   @ViewChild('index2') index2!: ElementRef<HTMLInputElement>;
+  @ViewChild("ngOtpInput", { static: false }) ngOtpInput: any; config = {
+     allowNumbersOnly: true,
+      length: 8,
+       isPasswordInput: false,
+        disableAutoFocus: false,
+          inputStyles: { width: "28px", height: "28px",border: "1px solid #93358d", focusVisible: "#93358d", fontSize: "18px"},
+    };
 
   constructor() {  }
 
@@ -24,12 +32,12 @@ export class HomePage {
   }
 
   // Funcion que verifica que lo que se envia sea un numero
-  numericOnly(event: any): boolean {
-    let pattern = /^([0-9])$/;
-    let result = pattern.test(event.key);
-    console.log(result)
-    return result;
-  }
+  // numericOnly(event: any): boolean {
+  //   let pattern = /^([0-9])$/;
+  //   let result = pattern.test(event.key);
+  //   console.log(result)
+  //   return result;
+  // }
 
   // onKeyUp(event: KeyboardEvent, index: number) {
   //   const input = event.target as HTMLInputElement;

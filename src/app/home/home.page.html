@@ -15,8 +15,8 @@
       placeholder="Su clave"></ion-input>
     <!-- 2 -->
     <ion-item>
-      <ng-otp-input (keypress)="numericOnly($event)" type="text" (onInputChange)="onOtpChange($event)"
-        [config]="{length:8}"></ng-otp-input>
+      <ng-otp-input type="text" (onInputChange)="onOtpChange($event)"
+        [config]="config"></ng-otp-input>
     </ion-item>
     <!-- 3 -->
     <ion-item>
